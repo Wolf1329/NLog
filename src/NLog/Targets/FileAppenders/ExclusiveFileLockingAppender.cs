@@ -164,7 +164,7 @@ namespace NLog.Targets.FileAppenders
 
                 if (!SafeFileExists(_filePath))
                 {
-                    InternalLogger.Info("{0}: Closing FileStream because it no longer File.Exists: '{1}'", _fileTarget, _filePath);
+                    InternalLogger.Info("{0}: Closing FileStream because no longer File.Exists: '{1}'", _fileTarget, _filePath);
                     SafeCloseFile(_filePath, _fileStream);
                     throw new FileNotFoundException($"Could not find file: '{_filePath}'", _filePath);
                 }
